@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Random Alphabet WebAR</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body>
+    <!-- AR.js + A-Frame scene with face detection -->
+    <a-scene
+      embedded
+      vr-mode-ui="enabled: false"
+      arjs="sourceType: webcam; detectionMode: face; debugUIEnabled: false;"
+    >
+      <!-- 2D text that will show the letter -->
+      <a-entity
+        id="letter"
+        text="value: ?; align: center; width: 2"
+        position="0 0 -1.5"
+      ></a-entity>
+    </a-scene>
+
+    <!-- Overlayed “Hold to Record” button -->
+    <button id="record">Hold to Record</button>
+
+    <!-- Your shuffle logic -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
